@@ -13,7 +13,7 @@
            <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>            
            <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />  
       </head>  
-      <body>  
+      <body>   
            <br /><br />  
            <div class="container">  
                 <h3 align="center">Datatables Jquery Plugin with Php MySql and Bootstrap</h3>  
