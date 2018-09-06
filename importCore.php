@@ -11,7 +11,7 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 		$data = simplexml_load_file($_FILES['file']['tmp_name']);
 		$connect = new PDO('mysql:host=localhost;dbname=testing', 'root', '');
 		$query = "
-	  INSERT INTO employee 
+	  INSERT INTO comenzi 
 	   (name, address, gender, designation, age) 
 	   VALUES(:name, :address, :gender, :designation, :age);
 	  ";
