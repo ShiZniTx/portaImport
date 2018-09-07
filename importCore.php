@@ -18,7 +18,7 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 		$data = simplexml_load_file($_FILES['file']['tmp_name']);
 		$connect = new PDO('mysql:host=localhost;dbname=r32256vo_portaImport',$dbUser, $dbPass);
 		$query = "
-	  INSERT INTO comenzi 
+	  INSERT INTO comenzi
 	   (CreatedDate, OrderName, OrderNo, CatalogDescription, CatalogNumber, Configuration, Ean, LineNo, OrderCurrency, OrderedQuantity, PlannedDate, ShippedQuantity, SupplierItemCode, TotalDiscount, TotalWeight, UnitGrossPriceDiscount, UnitNetPrice, UnitNetPriceDiscount, UnitOfWeight) 
 	   VALUES(:CreatedDate, :OrderName, :OrderNo, :CatalogDescription, :CatalogNumber, :Configuration, :Ean, :LineNo, :OrderCurrency, :OrderedQuantity, :PlannedDate, :ShippedQuantity, :SupplierItemCode, :TotalDiscount, :TotalWeight, :UnitGrossPriceDiscount, :UnitNetPrice, :UnitNetPriceDiscount, :UnitOfWeight);
 	  ";
