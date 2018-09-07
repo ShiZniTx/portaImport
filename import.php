@@ -18,12 +18,12 @@
      <span id="message"></span>
      <form method="post" id="import_form" enctype="multipart/form-data">
       <div class="form-group">
-       <label>Select XML File</label>
+       <label>Selecteaza fisierul XML</label>
        <input type="file" name="file" id="file" />
       </div>
       <br />
       <div class="form-group">
-       <input type="submit" name="submit" id="submit" class="btn btn-info" value="Import" />
+       <input type="submit" name="submit" id="submit" class="btn btn-info" value="Start Import" />
       </div>
      </form>
     </div>
