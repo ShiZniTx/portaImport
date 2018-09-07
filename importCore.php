@@ -1,5 +1,11 @@
 <?php
 //import.php
+// DB CONFIGURATION //
+$dbName = 'r32256vo_portaImport';
+$dbUser = 'r32256vo_porta';
+$dbPass = '&~j&XC%D7+~W';
+$dbHost = 'localhost';
+// END DB CONFIGURATION //
 sleep(3);
 $output = '';
 
@@ -9,7 +15,7 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 	$file_extension = end($file_data);
 	if (in_array($file_extension, $valid_extension)) {
 		$data = simplexml_load_file($_FILES['file']['tmp_name']);
-		$connect = new PDO('mysql:host=localhost;dbname=testing', 'root', '');
+		$connect = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUser, $dbPass);
 		$query = "
 	  INSERT INTO comenzi 
 	   (name, address, gender, designation, age) 
