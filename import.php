@@ -12,7 +12,7 @@
   <br />
   <div class="container">
    <div class="row">
-    <h2 align="center">How to Import XML Data into Mysql Table Using Ajax PHP</h2>
+    <h2 align="center">Import Comenzi Porta</h2>
     <br />
     <div class="col-md-9" style="margin:0 auto; float:none;">
      <span id="message"></span>
