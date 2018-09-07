@@ -19,8 +19,7 @@
      <form method="post" id="import_form" enctype="multipart/form-data">
       <div class="form-group">
        <label>Selecteaza fisierul XML</label>
-       <input type="file" name="file" id="file" />
-       <input type="file" name="file" id="file" />
+       <input type="file" name="file[]" id="file" multiple="multiple"/>
       </div>
       <br />
       <div class="form-group">
