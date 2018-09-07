@@ -23,7 +23,7 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 	  ";
 		$statement = $connect -> prepare($query);
 		for ($i = 0; $i < count($data); $i++) {
-			$statement -> execute(array(':name' => $data -> employee[$i] -> name, ':address' => $data -> employee[$i] -> address, ':gender' => $data -> employee[$i] -> gender, ':designation' => $data -> employee[$i] -> designation, ':age' => $data -> employee[$i] -> age));
+			$statement -> execute(array(':CreatedDate' => $data -> Header -> CreatedDate, ':OrderName' => $data -> OrderName -> OrderName, ':OrderNo' => $data -> Header -> OrderNo, ':CatalogDescription' => $data -> Line[$i] -> CatalogDescription, ':CatalogNumber' => $data -> Line[$i] -> CatalogNumber, ':Configuration' => $data -> Line[$i] -> Configuration, ':Ean' => $data -> Line[$i] -> Ean, ':LineNo' => $data -> Line[$i] -> LineNo, ':OrderCurrency' => $data -> Line[$i] -> OrderCurrency, ':OrderedQuantity' => $data -> Line[$i] -> OrderedQuantity, ':PlannedDate' => $data -> Line[$i] -> PlannedDate, ':ShippedQuantity' => $data -> Line[$i] -> ShippedQuantity, ':SupplierItemCode' => $data -> Line[$i] -> SupplierItemCode, ':TotalDiscount' => $data -> Line[$i] -> TotalDiscount, ':TotalWeight' => $data -> Line[$i] -> TotalWeight, ':UnitGrossPriceDiscount' => $data -> Line[$i] -> UnitGrossPriceDiscount, ':UnitNetPrice' => $data -> Line[$i] -> UnitNetPrice, ':UnitNetPriceDiscount' => $data -> Line[$i] -> UnitNetPriceDiscount, ':UnitOfWeight' => $data -> Line[$i] -> UnitOfWeight));
 
 		}
 		$result = $statement -> fetchAll();
