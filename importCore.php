@@ -10,6 +10,14 @@ $dbHost = 'localhost';
 sleep(3);
 $output = '';
 
+for ($i = 0; $i < count($_FILES['file']['name']); $i++) {
+
+
+
+
+
+
+
 if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 	$valid_extension = array('xml');
 	$file_data = explode('.', $_FILES['file']['name']);
@@ -24,6 +32,17 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 	  ";
 		$statement = $connect -> prepare($query);
 		for ($i = 0; $i < count($data); $i++) {
+		// Comparam rezultatele din baza de date cu cele care urmeaza a fi introduse 
+			$sql = mysqli_query("SELECT * FROM accounts WHERE OrderNo = '$makeUser'");
+			if(mysqli_num_rows($sql) > 0)
+			{
+			   //exists
+			}
+			else
+			{
+			   //does not exist
+			}
+		// End Comparatie
 			$statement -> execute(array(':CreatedDate' => $data -> Header -> CreatedDate, ':OrderName' => $data -> Header -> OrderName, ':OrderNo' => $data -> Header -> OrderNo, ':CatalogDescription' => $data -> Lines -> Line[$i] -> CatalogDescription, ':CatalogNumber' => $data -> Lines -> Line[$i] -> CatalogNumber, ':Configuration' => $data -> Lines -> Line[$i] -> Configuration, ':Ean' => $data -> Lines -> Line[$i] -> Ean, ':LineNo' => $data -> Lines -> Line[$i] -> LineNo, ':OrderCurrency' => $data -> Lines -> Line[$i] -> OrderCurrency, ':OrderedQuantity' => $data -> Lines -> Line[$i] -> OrderedQuantity, ':PlannedDate' => $data -> Lines -> Line[$i] -> PlannedDate, ':ShippedQuantity' => $data -> Lines -> Line[$i] -> ShippedQuantity, ':SupplierItemCode' => $data -> Lines -> Line[$i] -> SupplierItemCode, ':TotalDiscount' => $data -> Lines -> Line[$i] -> TotalDiscount, ':TotalWeight' => $data -> Lines -> Line[$i] -> TotalWeight, ':UnitGrossPriceDiscount' => $data -> Lines -> Line[$i] -> UnitGrossPriceDiscount, ':UnitNetPrice' => $data -> Lines -> Line[$i] -> UnitNetPrice, ':UnitNetPriceDiscount' => $data -> Lines -> Line[$i] -> UnitNetPriceDiscount, ':UnitOfWeight' => $data -> Lines -> Line[$i] -> UnitOfWeight));
 
 		}
@@ -38,5 +57,14 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 	$output = '<div class="alert alert-warning">Please Select XML File</div>';
 }
 
+
+
+
+
+
+
+
+
+}
 echo $output;
 ?>

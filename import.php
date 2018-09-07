@@ -20,6 +20,7 @@
       <div class="form-group">
        <label>Selecteaza fisierul XML</label>
        <input type="file" name="file" id="file" />
+       <input type="file" name="file" id="file" />
       </div>
       <br />
       <div class="form-group">
