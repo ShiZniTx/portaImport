@@ -57,9 +57,9 @@ $(document).ready(function(){
    }
   })
 
-  setInterval(function(){
-   $('#message').html('');
-  }, 5000);
+//  setInterval(function(){
+//   $('#message').html('');
+//  }, 5000);
 
  });
 });
