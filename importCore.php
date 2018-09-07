@@ -18,8 +18,8 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 		$connect = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUser, $dbPass);
 		$query = "
 	  INSERT INTO comenzi 
-	   (name, address, gender, designation, age) 
-	   VALUES(:name, :address, :gender, :designation, :age);
+	   (CreatedDate, OrderName, OrderNo, CatalogDescription, CatalogNumber, Configuration, Ean, LineNo, OrderCurrency, OrderedQuantity, PlannedDate, ShippedQuantity, SupplierItemCode, TotalDiscount, TotalWeight, UnitGrossPriceDiscount, UnitNetPrice, UnitNetPriceDiscount, UnitOfWeight) 
+	   VALUES(:CreatedDate, :OrderName, :OrderNo, :CatalogDescription, :CatalogNumber, :Configuration, :Ean, :LineNo, :OrderCurrency, :OrderedQuantity, :PlannedDate, :ShippedQuantity, :SupplierItemCode, :TotalDiscount, :TotalWeight, :UnitGrossPriceDiscount, :UnitNetPrice, :UnitNetPriceDiscount, :UnitOfWeight);
 	  ";
 		$statement = $connect -> prepare($query);
 		for ($i = 0; $i < count($data); $i++) {
