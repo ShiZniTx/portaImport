@@ -40,13 +40,13 @@ for ($x = 0; $x < count($_FILES['file']['name']); $x++) {
 			}
 			$result = $statement -> fetchAll();
 			if (isset($result)) {
-				$output .= '<div class="alert alert-success">Importul fisierului '.$_FILES['file']['name'][$x].' a fost efectuat cu success.</div>';
+				$output .= '<div class="alert alert-success">Importul fisierului <b>'.$_FILES['file']['name'][$x].'</b> a fost efectuat cu success.</div>';
 			}
 		} else {
-			$output .= '<div class="alert alert-warning">Fisier-ul '.$_FILES['file']['name'][$x].' este invalid</div>';
+			$output .= '<div class="alert alert-warning">Fisier-ul <b>'.$_FILES['file']['name'][$x].'</b> este invalid.</div>';
 		}
 	} else {
-		$output .= '<div class="alert alert-warning">Te rugam selecteaza fisiere XML</div>';
+		$output .= '<div class="alert alert-warning">Te rugam selecteaza fisierele de tip XML pe care doresti sa le importi.</div>';
 	}
 }
 echo $output;
